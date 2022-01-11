@@ -1,19 +1,18 @@
 <?php
-class Dog{
-    public $breed;
-    public $name;
+class Animal{
     public $color;
-
-    public function __construc($b,$c){
-        $this->breed = $b;
+    public $breed;
+    public function __construct($c, $b)
+    {
         $this->color = $c;
+        $this->breed = $b;
     }
 
-    public function Display($name){
-        echo $name . "'s Dog, the " . $this->color . " " . $this->breed . ", ";
+    public function message(){
+        return "He's Dog the " .$this->color. " " .$this->breed. " is cute!!";
     }
 }
 
-$Dave = new Dog("Labrado", "Brown");
-$Dave->Display("David");
+$animal = new Animal("Black", "Labrado");
+echo $animal->message();
 ?>
