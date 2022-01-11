@@ -46,3 +46,47 @@ class Car{
 }
 ?>
 ```
+
+That's done, now when I'm to create an instance of the class I can pass the parameters and the class public variables are updated automatically on the class instanciation.
+Now think of this: 
+```
+If an instance of the class is created, how do we use the data in the class?
+```
+For this we need another method in other to display a message to the reader/viewer; and this method will be called `message` because I guess I like being very descriptive with names, more or less.<br/>
+But before we do that, we need to know what output we expect.<br/>Well, I do.
+## Expected Output:
+```
+Jake's car is a red Toyota!
+```
+<br/>
+So now let me write code to achieve that.
+
+```PHP
+<?php
+class Car{
+    public $model;
+    public $color;
+    
+    public function __constructor($m, $c){
+        $this->model = $m;
+        $this->color = $c;
+    }
+
+    public function message($name){
+        return $name . "'s car is a " . $this->color . " " . $this->model . "!";
+    }
+}
+
+$NewCar = new Car("Toyota", "red");
+echo $NewCar->message("Jake");
+?>
+```
+## And that's it. Output:
+```
+Jake's car is a red Toyota!
+```
+<br/>
+
+# Anyways y'all, if you really read all the way up to this point then damn!! You've got sometime on your hands yo!! Cause how'd you even settle to read all this??
+
+## Lol Just Kidding, I'm learning all this PHP things for the first time and I thought it'll be cool to store for later on, just as a reminder.<br/> Peace.
